@@ -1,0 +1,55 @@
+
+\documentclass[11pt]{article}
+\usepackage{amsfonts,amssymb,amsthm,fancybox,amsmath,fullpage}
+\usepackage{times}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\lstset{language=Java, basicstyle=\ttfamily\footnotesize, belowskip=-0em}
+
+\newcommand{\red}[1]{{\color{red}{#1}}}
+
+
+\newcommand{\assignment}[3]{ 
+\centering{\Large\bf #1 Assignment #2}\\
+\medskip
+\centering{\large \it Due: #3}}
+
+\newif\ifsolutions
+\solutionstrue
+\newif\ifmarking
+\markingfalse
+
+
+\begin{document}
+\assignment{CSCB63}{2}{11.59pm, Saturday March 6, 2021 $\Leftarrow$ \red{Note New Deadline}}
+
+\begin{enumerate}
+
+\item (not for marks) Make sure you are capable of applying BFS, DFS, Prim's algorithm, Kruskal's algorithm and Dijkstra's algorithm to an appropriate type of graph (directed, not directed or weighted). 
+
+\item In class, we have (or will soon) seen Dijkstra's algorithm to find all the shortest paths from a single source in a weighted graph. In this question, you will construct a graph that has many shortest paths, in fact, your graph will have $3^n$ shortest paths between a source vertex $s$ and a sink vertex $t$, where the number of vertices is a function of the form $cn + k$ for some $c, k\in \mathbb N$. More precisely, prove:\\
+
+\begin{quote}\textsl{For every natural number $n$, there is an undirected graph of $cn + k$ vertices such that for some pair of vertices $s$ and $t$ in the graph, there are $3^n$ shortest paths from $s$ to $t$.}\end{quote}
+
+You select the constants $k$ and $c$ to make it work. 
+
+ \item Determine whether the following claim is true and either prove the claim or it's negation. 
+ 
+\begin{quote}\textsl{ Given a graph $G$ with $n$ vertices such that for every $v\in V$, \textbf{deg}($v$) $\geq \frac{n}{2}$ then $G$ is one connected component. }\end{quote}
+ 
+ \item We can model the build process of an object as a directed graph. For example, suppose we are building a house.  The walls can't be painted until the drywall is installed which cannot happen until after the studs are built. Suppose we model the process with a vertex representing the components of the object and a directed edge from $a$ to $b$ if $a$ must be completed before $b$ can be completed. Notice that if this directed graph has a cycle, then there is no way to construct the object.   
+ \begin{enumerate}
+ \item Give an algorithm to determine whether a directed graph has a cycle.  What should your complexity be? 
+ \item Using DFS, construct an algorithm that either returns a valid ordering of the vertices to build the object or  a cycle confirming no such ordering exists.  Again, what should your complexity be? 
+ \end{enumerate}
+ 
+ \item Consider an undirected graph $G=(V, E)$ with non-distinct, non-negative edge weights. If the edge weights are not distinct, it is possible to have more than one MST. Suppose we have a spanning tree $T\subset E$ with the guarantee that for every $e\in T$, $e$ belongs to some minimum-cost spanning tree in $G$. Can we conclude that $T$ itself must be a minimum-cost spanning tree in $G$? Give a proof or a counter example with explanation. 
+ 
+  
+ \item The programming assignment for A2 and A3 is a combined assignments that will be posted on Markus. It will not be due until A3 is due as it requires a bit more thought and problem solving that A1. As with any assignment, make sure that the work is your own - do not copy for another student or a website.  
+ 
+ \end{enumerate}
+ \end{document}
+ 
